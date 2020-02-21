@@ -1,9 +1,10 @@
 {
   "name": "@wellwind/ngx-easy-translate",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "peerDependencies": {
     "@angular/common": "^9.0.2",
     "@angular/core": "^9.0.2",
+    "rxjs": "~6.5.4",
     "tslib": "^1.10.0"
   },
   "author": {
@@ -16,6 +17,7 @@
     "internationalization",
     "translate"
   ],
+  "private": false,
   "homepage": "https://github.com/wellwind/ngx-easy-translate",
   "bugs": "https://github.com/wellwind/ngx-easy-translate/issues"
 }
