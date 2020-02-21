@@ -1,3 +1,3 @@
 # NgxEasyTranslate
 
-* [Package Document]('projects/ngx-easy-translate');
+* [Package Document](projects/ngx-easy-translate);
