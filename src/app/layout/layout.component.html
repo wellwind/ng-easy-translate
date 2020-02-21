@@ -1,3 +1,8 @@
 <h1>({{ currentLanguage }}){{ (translate | async)?.greeting }}</h1>
 <h2>from pipe: {{ 'greeting' | translate }}</h2>
 <h3>{{ 'profile.name' | translate }}: Mike</h3>
+<p>--- pages ---</p>
+<a routerLink="/home">Home</a> |
+<a routerLink="/about">About</a>
+
+<router-outlet></router-outlet>
