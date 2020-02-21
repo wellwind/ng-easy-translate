@@ -1,6 +1,6 @@
 {
-  "name": "ngx-easy-translate",
-  "version": "0.0.1",
+  "name": "@wellwind/ngx-easy-translate",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^9.0.2",
     "@angular/core": "^9.0.2",
