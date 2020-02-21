@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { NgxEasyTranslateModule } from 'ngx-easy-translate';
+import { NgxEasyTranslateModule } from '@wellwind/ngx-easy-translate';
 import { from } from 'rxjs';
 
 

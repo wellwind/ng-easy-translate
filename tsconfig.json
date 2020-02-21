@@ -19,7 +19,7 @@
       "dom"
     ],
     "paths": {
-      "ngx-easy-translate": [
+      "@wellwind/ngx-easy-translate": [
         "dist/ngx-easy-translate/ngx-easy-translate",
         "dist/ngx-easy-translate"
       ]

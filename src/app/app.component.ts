@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppTranslate } from './i18n/type';
-import { NgxEasyTranslateService, ROOT_TRANSLATE } from 'ngx-easy-translate';
+import { NgxEasyTranslateService, ROOT_TRANSLATE } from '@wellwind/ngx-easy-translate';
 
 @Component({
   selector: 'app-root',

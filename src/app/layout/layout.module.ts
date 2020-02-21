@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { from } from 'rxjs';
-import { NgxEasyTranslateModule } from 'ngx-easy-translate';
+import { NgxEasyTranslateModule } from '@wellwind/ngx-easy-translate';
 
 
 @NgModule({

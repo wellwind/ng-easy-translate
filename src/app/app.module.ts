@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { NgxEasyTranslateModule } from 'ngx-easy-translate';
+import { NgxEasyTranslateModule } from '@wellwind/ngx-easy-translate';
 
 @NgModule({
   declarations: [

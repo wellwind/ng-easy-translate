@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FEATURE_TRANSLATE } from 'ngx-easy-translate';
+import { FEATURE_TRANSLATE } from '@wellwind/ngx-easy-translate';
 import { AboutTranslate } from './i18n/type';
 import { Observable } from 'rxjs';
 

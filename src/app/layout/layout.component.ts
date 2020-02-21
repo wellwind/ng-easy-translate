@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { LayoutTranslate } from './i18n/type';
 import { Observable } from 'rxjs';
-import { NgxEasyTranslateService, FEATURE_TRANSLATE } from 'ngx-easy-translate';
+import { NgxEasyTranslateService, FEATURE_TRANSLATE } from '@wellwind/ngx-easy-translate';
 
 @Component({
   selector: 'app-layout',
