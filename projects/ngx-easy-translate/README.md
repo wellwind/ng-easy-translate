@@ -57,7 +57,7 @@ import { of } from 'rxjs';
 
 3. Inject `ROOT_TRANSLATE` to get language, it's an Observable.
 
-4. If need change language, inject `NgxEasyTranslateService` and call `changeCurrentLanguage`.
+4. If need change language, inject `NgxEasyTranslateService` and call `changeCurrentLanguage()`.
 
 ```typescript
 import { Component, OnInit, Inject } from '@angular/core';
@@ -67,9 +67,9 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>{{ (translate | async)?.title }}</h1>
-  <button (click)="changeLang('en')">EN</button>
-  <button (click)="changeLang('zh')">ZH</button>
+    <h1>{{ (translate | async)?.title }}</h1>
+    <button (click)="changeLang('en')">EN</button>
+    <button (click)="changeLang('zh')">ZH</button>
   `,
 })
 export class AppComponent {
@@ -166,7 +166,7 @@ export class AppComponent {
 
 ### Support Lazy Loading
 
-Thanks for Angular / Webpack / dynamic import, it's very easy to seperate language file by using `import()`
+The key point is the loader function, we can write any logic to load translation content, and thanks for dynamic import, it's very easy to seperate language file by using `import()`.
 
 ```typescript
 NgxEasyTranslateModule.forRoot(
@@ -180,13 +180,15 @@ NgxEasyTranslateModule.forRoot(
 });
 ```
 
-It can also simplify like:
+Or just like this:
 
 ```typescript
 loader: (lang: string) => from(import(`./i18n/${lang}`)).pipe(map(result => result.lang))
 ```
 
-The important thing is now `en.ts`, `zh.ts` was never used by Angular CLI, just add the pattern to `tsconfig.app.json`
+The important thing is now `en.ts`, `zh.ts` was never used explicitly, we will got errors when compile the project.
+
+We have to include these files in `tsconfig.app.json`.
 
 ```json
 "include": [
@@ -195,11 +197,11 @@ The important thing is now `en.ts`, `zh.ts` was never used by Angular CLI, just 
 ]
 ```
 
-### Support Lazy Loading By Feature
+### Support Lazy Loading By Feature Module
 
-We may not want to write all translation in one file, sometimes we need load languages by feature module.
+We may not want to write all translation content in one file (imagine 1000+ pages), sometimes we need lazily load languages by every feature module.
 
-To acheieve that, put loader to `NgxEasyTranslateModule.forFeature()`
+To acheieve that, put your loader to `NgxEasyTranslateModule.forFeature()`
 
 ```typescript
 NgxEasyTranslateModule.forFeature((lang) => from(import(`./i18n/${lang}`).then(result => result.lang)))
@@ -226,6 +228,10 @@ export class FeatureComponent {
 ### v1.0.0
 
 * Just publish package.
+
+## Help Wanted
+
+Because English is not my major language. This document should have many incorrect things. If you think this package is useful, please proofread and send a PR to me. Thank you :)
 
 ### LICENSE
 
