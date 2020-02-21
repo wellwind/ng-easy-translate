@@ -1,9 +1,9 @@
 <button (click)="changeLang('en')">EN</button>
 <button (click)="changeLang('zh')">ZH</button>
 <h1>({{ currentLanguage }}){{ (translate | async)?.greeting }}</h1>
-
+<h2>from pipe: {{ 'greeting' | translate }}</h2>
 <p>
-  --- feature ---
+  --- lazy feature ---
 </p>
 
 <router-outlet></router-outlet>

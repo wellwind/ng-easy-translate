@@ -1,1 +1,3 @@
 <h1>({{ currentLanguage }}){{ (translate | async)?.greeting }}</h1>
+<h2>from pipe: {{ 'greeting' | translate }}</h2>
+<h3>{{ 'profile.name' | translate }}: Mike</h3>

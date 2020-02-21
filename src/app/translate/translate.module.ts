@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TranslateService } from './translate.service';
 import { TranslateLoader, ROOT_TRANSLATE, DEFAULT_LANGUAGE, FEATURE_TRANSLATE_LOADER, FEATURE_TRANSLATE } from './consts';
 import { switchMap } from 'rxjs/operators';
+import { TranslatePipe } from './translate.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [TranslatePipe],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [TranslatePipe]
 })
 export class TranslateModule {
   constructor() { }

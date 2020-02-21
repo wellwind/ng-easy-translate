@@ -1,3 +1,6 @@
-export default {
-    greeting: 'Hello World in Layout'
-}
+export const lang = {
+    greeting: 'Hello World in Layout',
+    profile: {
+        name: 'Your Name'
+    }
+};

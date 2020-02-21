@@ -12,7 +12,7 @@ import { TranslateModule } from '../translate/translate.module';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    TranslateModule.forFeature((lang) => from(import(`./i18n/${lang}`).then(result => result.default)))
+    TranslateModule.forFeature((lang) => from(import(`./i18n/${lang}`).then(result => result.lang)))
   ]
 })
 export class LayoutModule { }

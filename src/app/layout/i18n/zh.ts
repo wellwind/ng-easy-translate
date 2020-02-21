@@ -1,5 +1,8 @@
 import { LayoutTranslate } from './type';
 
-export default {
-    greeting: '嗨世界 (來自 Layout)'
-} as LayoutTranslate;
+export const lang: LayoutTranslate = {
+    greeting: '嗨世界 (來自 Layout)',
+    profile: {
+        name: '名字'
+    }
+};

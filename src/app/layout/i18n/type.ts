@@ -1,3 +1,3 @@
-import * as en from './en';
+import { lang as en } from './en';
 
-export type LayoutTranslate = typeof en.default;
+export type LayoutTranslate = typeof en;
