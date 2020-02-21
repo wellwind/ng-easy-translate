@@ -207,6 +207,20 @@ NgxEasyTranslateModule.forFeature((lang) => from(import(`./i18n/${lang}`).then(r
 
 Then we can write own own translate file for seperated feature module.
 
+In component, we can inject `FEATURE_TRANSLATE` to get the current language translaction for the feature.
+
+```typescript
+import { ROOT_TRANSLATE, FEATURE_TRANSLATE } from '@wellwind/ngx-easy-translate';
+
+export class FeatureComponent {
+  
+  constructor(
+    @Inject(ROOT_TRANSLATE) private rootTranslate: Observable<LayoutTranslate>,
+    @Inject(FEATURE_TRANSLATE) private featureTranslate: Observable<LayoutTranslate>) { }
+}
+```
+
+
 ## Release Notes
 
 ### v1.0.0
