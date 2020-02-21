@@ -1,12 +1,11 @@
 import { Injectable, Inject } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { DEFAULT_LANGUAGE } from './consts';
+import { DEFAULT_LANGUAGE } from './tokens';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TranslateService {
-
+export class NgxEasyTranslateService {
   currentLanguage: string;
   currentLanguage$ = new ReplaySubject<string>(1);
 

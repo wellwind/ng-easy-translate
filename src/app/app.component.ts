@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppTranslate } from './i18n/type';
-import { TranslateService } from './translate/translate.service';
-import { ROOT_TRANSLATE } from './translate/consts';
+import { NgxEasyTranslateService, ROOT_TRANSLATE } from 'ngx-easy-translate';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit {
   get translate() { return this.rootTranslate; }
 
   constructor(
-    private translateService: TranslateService,
+    private translateService: NgxEasyTranslateService,
     @Inject(ROOT_TRANSLATE) private rootTranslate: Observable<AppTranslate>
   ) { }
 

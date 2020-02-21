@@ -1,7 +1,4 @@
-import { Observable } from 'rxjs';
 import { InjectionToken } from '@angular/core';
-
-export type TranslateLoader = (lang: string) => Observable<any>;
 
 export const DEFAULT_LANGUAGE = new InjectionToken('default translate language token');
 export const ROOT_TRANSLATE_LOADER = new InjectionToken('root translate loader token');

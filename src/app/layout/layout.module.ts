@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { from } from 'rxjs';
-import { TranslateModule } from '../translate/translate.module';
+import { NgxEasyTranslateModule } from 'ngx-easy-translate';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import { TranslateModule } from '../translate/translate.module';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    TranslateModule.forFeature((lang) => from(import(`./i18n/${lang}`).then(result => result.lang)))
+    NgxEasyTranslateModule.forFeature((lang) => from(import(`./i18n/${lang}`).then(result => result.lang)))
   ]
 })
 export class LayoutModule { }

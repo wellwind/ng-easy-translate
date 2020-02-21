@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { TranslateModule } from './translate/translate.module';
+import { NgxEasyTranslateModule } from 'ngx-easy-translate';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { TranslateModule } from './translate/translate.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TranslateModule.forRoot({
+    NgxEasyTranslateModule.forRoot({
       defaultLang: 'en',
       loader: (lang: string) => from(import(`./i18n/${lang}`)).pipe(map(result => result.default))
     })

@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { LayoutTranslate } from './i18n/type';
 import { Observable } from 'rxjs';
-import { TranslateService } from '../translate/translate.service';
-import { FEATURE_TRANSLATE } from '../translate/consts';
+import { NgxEasyTranslateService, FEATURE_TRANSLATE } from 'ngx-easy-translate';
 
 @Component({
   selector: 'app-layout',
@@ -15,7 +14,7 @@ export class LayoutComponent implements OnInit {
   get translate() { return this.featureTranslate; }
 
   constructor(
-    private translateService: TranslateService,
+    private translateService: NgxEasyTranslateService,
     @Inject(FEATURE_TRANSLATE) private featureTranslate: Observable<LayoutTranslate>) { }
 
   ngOnInit() {

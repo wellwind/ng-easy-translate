@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform, Inject, Optional } from '@angular/core';
-import { ROOT_TRANSLATE, FEATURE_TRANSLATE } from './consts';
-import { Observable, of, Subscription, combineLatest, iif } from 'rxjs';
+import { Pipe, PipeTransform, Inject, Optional, OnDestroy } from '@angular/core';
+import { ROOT_TRANSLATE, FEATURE_TRANSLATE } from './tokens';
+import { Observable, of, Subscription, combineLatest } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 
 export const findByKey = (key: string, obj: any) => {
@@ -15,7 +15,7 @@ export const findByKey = (key: string, obj: any) => {
   name: 'translate',
   pure: false
 })
-export class TranslatePipe implements PipeTransform {
+export class TranslatePipe implements PipeTransform, OnDestroy {
 
   latestValue: string;
   subscription: Subscription;
@@ -43,4 +43,7 @@ export class TranslatePipe implements PipeTransform {
     return this.latestValue;
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

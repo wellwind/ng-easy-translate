@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-easy-translate": [
+        "dist/ngx-easy-translate/ngx-easy-translate",
+        "dist/ngx-easy-translate"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
