@@ -5,5 +5,17 @@
     "@angular/common": "^9.0.2",
     "@angular/core": "^9.0.2",
     "tslib": "^1.10.0"
-  }
+  },
+  "author": {
+    "name": "Mike Huang",
+    "email": "wellwind@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "i18n",
+    "internationalization",
+    "translate"
+  ],
+  "homepage": "https://github.com/wellwind/ngx-easy-translate",
+  "bugs": "https://github.com/wellwind/ngx-easy-translate/issues"
 }
