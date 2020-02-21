@@ -217,8 +217,8 @@ import { ROOT_TRANSLATE, FEATURE_TRANSLATE } from '@wellwind/ngx-easy-translate'
 export class FeatureComponent {
   
   constructor(
-    @Inject(ROOT_TRANSLATE) private rootTranslate: Observable<LayoutTranslate>,
-    @Inject(FEATURE_TRANSLATE) private featureTranslate: Observable<LayoutTranslate>) { }
+    @Inject(ROOT_TRANSLATE) private rootTranslate: Observable<RootTranslate>,
+    @Inject(FEATURE_TRANSLATE) private featureTranslate: Observable<FeatureTranslate>) { }
 }
 ```
 
