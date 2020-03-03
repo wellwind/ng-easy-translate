@@ -29,7 +29,7 @@ import { of } from 'rxjs';
   ...,
   imports: [
     ...,
-    NgxEasyTranslateModule.forRoot(
+    NgxEasyTranslateModule.forRoot({
       defaultLang: 'en',
       loader: (lang: string) => {
         if(lang === 'en') {
