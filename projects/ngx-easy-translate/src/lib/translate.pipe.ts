@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform, Inject, Optional, OnDestroy } from '@angular/core';
+import { Pipe, PipeTransform, Inject, Optional, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ROOT_TRANSLATE, FEATURE_TRANSLATE } from './tokens';
 import { Observable, of, Subscription, combineLatest } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
+import { map, startWith, tap } from 'rxjs/operators';
 
 export const findByKey = (key: string, obj: any) => {
   let result = obj;
@@ -22,7 +22,8 @@ export class TranslatePipe implements PipeTransform, OnDestroy {
 
   constructor(
     @Optional() @Inject(ROOT_TRANSLATE) private rootTranslate: Observable<any>,
-    @Optional() @Inject(FEATURE_TRANSLATE) private featureTranslate: Observable<any>) {
+    @Optional() @Inject(FEATURE_TRANSLATE) private featureTranslate: Observable<any>,
+    private changeDetectorRef: ChangeDetectorRef) {
   }
 
   transform(key: string): any {
@@ -32,12 +33,16 @@ export class TranslatePipe implements PipeTransform, OnDestroy {
           !!this.rootTranslate ? this.rootTranslate.pipe(startWith({})) : of({}),
           !!this.featureTranslate ? this.featureTranslate.pipe(startWith({})) : of({})
         ]
-      ).pipe(map(([rootTranslate, featureTranslate]) => {
-        const rootResult = findByKey(key, rootTranslate);
-        const featureResult = findByKey(key, featureTranslate);
+      ).pipe(
+        map(([rootTranslate, featureTranslate]) => {
+          const rootResult = findByKey(key, rootTranslate);
+          const featureResult = findByKey(key, featureTranslate);
 
-        return featureResult || rootResult;
-      })).subscribe(result => this.latestValue = result);
+          return featureResult || rootResult;
+        }),
+        // trigger change detection to resolve OnPush strategy.
+        tap(() => this.changeDetectorRef.markForCheck())
+      ).subscribe(result => this.latestValue = result);
     }
 
     return this.latestValue;

@@ -1,10 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FEATURE_TRANSLATE } from '@wellwind/ngx-easy-translate';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
 
