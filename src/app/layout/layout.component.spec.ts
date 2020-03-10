@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayoutComponent } from './layout.component';
+import { of } from 'rxjs';
+import { NgxEasyTranslateModule } from '@wellwind/ngx-easy-translate';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -8,9 +10,13 @@ describe('LayoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LayoutComponent ]
+      imports: [
+        NgxEasyTranslateModule.forRoot({ defaultLang: 'zh', loader: (_: string) => of({}) }),
+        NgxEasyTranslateModule.forFeature((_: string) => of({}))
+      ],
+      declarations: [LayoutComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
